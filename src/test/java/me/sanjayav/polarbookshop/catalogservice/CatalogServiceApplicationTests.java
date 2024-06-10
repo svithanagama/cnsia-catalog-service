@@ -21,7 +21,7 @@ class CatalogServiceApplicationTests {
 
 	@Test
 	void whenPostRequestThenBookCreated() {
-		var expectedBook = Book.of("1231231231", "Title", "Author", 9.90);
+		var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Manning");
 
 		webTestClient
 				.post()
@@ -34,6 +34,7 @@ class CatalogServiceApplicationTests {
 				.jsonPath("$.isbn").isEqualTo("1231231231")
 				.jsonPath("$.title").isEqualTo("Title")
 				.jsonPath("$.author").isEqualTo("Author")
+				.jsonPath("$.publisher").isEqualTo("Manning")
 				.jsonPath("$.price").isEqualTo(9.9)
 				.jsonPath("$.createdDate").value(Matchers.isA(String.class))
 				.jsonPath("$.lastModifiedDate").value(Matchers.isA(String.class))
