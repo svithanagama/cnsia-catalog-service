@@ -29,7 +29,7 @@ dependencyManagement {
 
 bootBuildImage {
 	imageName = "${project.name}"
-	environment = ["BP_JVM_VERSION" : "17.*"]
+	environment = ["BP_JVM_VERSION" : "21.*"]
 
 	docker {
 		publishRegistry {
